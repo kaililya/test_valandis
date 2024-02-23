@@ -1,4 +1,3 @@
-import React from "react";
 import styles from './GoodsItem.module.css'
 
 function GoodsItem({ good }: any) {
