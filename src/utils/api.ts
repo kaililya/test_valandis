@@ -2,7 +2,6 @@ import axios from "axios";
 import { TParams } from "../types/types";
 import { makeAccess } from "./make-access";
 import { mainURL } from "./constants";
-import { useSearchParams } from "react-router-dom";
 
 const defalutHeaders = () => {
   return {
