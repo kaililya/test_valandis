@@ -1,17 +1,23 @@
-import { useState } from 'react';
+import { SyntheticEvent, useState } from 'react';
 import styles from './Filters.module.css';
 import { useSearchParams } from 'react-router-dom';
 import { useAppDispatch } from '../../hooks/redux-hooks';
 import { fetchDataLengthThunk, fetchDataThunk, fetchFilteredDataThunk } from '../../store/thunks/goods-thunk';
+import { updateUrlParams } from '../../utils/update-url-params';
 
 
 
-const Filters = () => {
+const Filters = ():JSX.Element => { 
+
   const [search, setSearch] = useSearchParams();
-
-  const formClassName = false ? `${styles.filters_container}` : `${styles.filters_container} ${styles.filters_container__hidden}`
-
   const dispatch = useAppDispatch();
+
+  let url = new URL(window.location.href);
+  let params = new URLSearchParams(url.search);
+
+  const [inputNameValue, setInputNameValue] = useState(params.getAll('product')[0]);
+  const [inputPriceValue, setInputPriceValue] = useState(params.getAll('price')[0]);
+  const [inputBrandValue, setInputBrandValue] = useState(params.getAll('brand')[0]);
 
   const handelResetFilters = () => {
     search.delete('product');
@@ -29,70 +35,32 @@ const Filters = () => {
     dispatch(fetchDataLengthThunk())
 
   }
-  let url = new URL(window.location.href);
-  let params = new URLSearchParams(url.search);
+  
 
-  const [inputNameValue, setInputNameValue] = useState(params.getAll('product')[0]);
-  const [inputPriceValue, setInputPriceValue] = useState(params.getAll('price')[0]);
-  const [inputBrandValue, setInputBrandValue] = useState(params.getAll('brand')[0]);
-
-
-  const handelInputNameChange = (e: any) => {
+  const handelInputNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputNameValue(e.target.value)
+    updateUrlParams('product', search, e, setSearch)
 
-    if (e.target.value === '') {
-      search.delete('product');
-      setSearch(search, {
-        replace: true,
-      });
-    } else {
-      search.set('product', e.target.value);
-      setSearch(search, {
-        replace: true,
-      });
-    }
   }
 
-  const handelInputBrandChange = (e: any) => {
+  const handelInputBrandChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputBrandValue(e.target.value)
-
-    if (e.target.value === '') {
-      search.delete('brand');
-      setSearch(search, {
-        replace: true,
-      });
-    } else {
-      search.set('brand', e.target.value);
-      setSearch(search, {
-        replace: true,
-      });
-    }
+    updateUrlParams('brand', search, e, setSearch)
   }
 
-  const handelInputPriceChange = (e: any) => {
-
+  const handelInputPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputPriceValue(e.target.value)
-    
-    if (e.target.value === '') {
-      search.delete('price');
-      setSearch(search, {
-        replace: true,
-      });
-    } else {
-      search.set('price', e.target.value);
-      setSearch(search, {
-        replace: true,
-      });
-    }
+    updateUrlParams('price', search, e, setSearch)
   }
 
-
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: SyntheticEvent<HTMLFormElement, SubmitEvent>) => {
     e.preventDefault();
     dispatch(fetchFilteredDataThunk())
   }
 
+  const formClassName = false ? `${styles.filters_container}` : `${styles.filters_container} ${styles.filters_container__hidden}`
   const buttonDisabled = !inputNameValue && !inputPriceValue && !inputBrandValue
+  
   return (
     <div className={styles.main_container}>
       <form className={formClassName} onSubmit={handleSubmit}>

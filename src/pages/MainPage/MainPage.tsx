@@ -5,7 +5,8 @@ import Pagination from '../../ui/Pagination/Pagination';
 import styles from './MainPage.module.css'
 import { modalPATH } from '../../utils/constants';
 
-function MainPage() {
+const MainPage = ():JSX.Element => {
+   
   const location = useLocation();
 
   return (

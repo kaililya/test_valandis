@@ -10,7 +10,7 @@ type TInitialStateUser = {
   getAllGoodsLengthSuccess: boolean,
   getAllGoodsLengthFailed: boolean,
   isFilteredRequest: boolean,
-  goodsArray: any[],
+  goodsArray: TGood[],
   countOfPage: number | null,
   error: string | unknown
 };

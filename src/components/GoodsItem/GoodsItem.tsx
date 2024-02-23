@@ -1,7 +1,11 @@
+import { TGood } from '../../types/types';
 import styles from './GoodsItem.module.css'
 
-function GoodsItem({ good }: any) {
+type TGoodsItem<T> = {
+  good: T;
+};
 
+const GoodsItem = ({ good }:TGoodsItem<TGood>):JSX.Element => {
   const { brand, id, price, product } = good
   return (
     <li className={styles.good}>

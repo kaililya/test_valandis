@@ -6,13 +6,12 @@ import styles from './Goods.module.css'
 import Loader from "../../ui/Loader/Loader";
 import Error from "../../ui/Error/Error";
 
-function Goods() {
+const Goods = ():JSX.Element => { 
   const dispatch = useAppDispatch()
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.size >= 2) {
-      console.log(params.size);
       dispatch(fetchFilteredDataThunk())
     } else {
       dispatch(fetchDataThunk())

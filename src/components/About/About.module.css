@@ -1,10 +1,15 @@
 .main_container {
   color: rgb(255, 255, 255);
-  background-color: rgb(31, 5, 27);
+  background-color: rgb(10, 10, 10);
   border-radius: 6px;
   padding: 18px;
   max-height: 400px;
   overflow-y: auto;
+}
+
+.title {
+  font-size: 22px;
+  color: rgb(238, 238, 67);
 }
 
 .subtitle {

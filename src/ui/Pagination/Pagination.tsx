@@ -9,8 +9,11 @@ import { fetchDataThunk } from "../../store/thunks/goods-thunk";
 import { useSearchParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
 
-function Pagination() {
+const Pagination = (): JSX.Element => {
+
   const [search, setSearch] = useSearchParams();
+  const dispatch = useAppDispatch();
+
   const {
     countOfPage: countsOfPagesFromServer,
     isFilteredRequest,
@@ -19,7 +22,6 @@ function Pagination() {
     getAllGoods
   } = useAppSelector((store) => store.goodsReducer);
   const [currentPage, setCurrentPage] = useState(1);
-  const dispatch = useAppDispatch();
 
   const setUrlPage = (page: number = 1) => {
     search.set('page', page.toString());
@@ -29,7 +31,6 @@ function Pagination() {
   }
 
   useEffect(() => {
-    // dispatch(fetchDataThunk())
     setUrlPage()
   }, [])
 
@@ -39,11 +40,9 @@ function Pagination() {
 
 
   const handleSetNextPage = () => {
-    console.log('sasasasasasa');
     if (countsOfPagesFromServer && currentPage < countsOfPagesFromServer) {
       setCurrentPage(prev => prev + 1);
       setUrlPage(currentPage + 1);
-
     }
   };
 

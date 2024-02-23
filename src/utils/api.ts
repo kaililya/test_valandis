@@ -36,15 +36,15 @@ export const getIds = () =>  {
   for (const [key, value] of new URLSearchParams(window.location.search).entries()) {
     params[key] = value;
   }
-  // @ts-ignore
-  const page = parseInt(params.page) === 1 ? 0 : parseInt(params.page) - 1
+
+  const page = parseInt(params.page as string) === 1 ? 0 : parseInt(params.page as string) - 1
+  
   return axios.post(
     mainURL,
     makeBody(TParams.GET_IDS, { offset: page*50, limit: 47 }),
     defalutHeaders()
   )
 }
-
 
 export const getItems = (ids: any) => axios.post(
   mainURL,
@@ -60,8 +60,7 @@ export const getFilteredIds = () => {
   }
 
   delete params.page
-  // @ts-ignore
-  params.price = parseInt(params.price)
+  params.price = parseInt(params.price as string)
 
   return axios.post(
     mainURL,

@@ -26,8 +26,11 @@ export const fetchDataThunk = () => async (dispatch: TAppDispatch) => {
       const items = await getItems(ids)
       dispatch(getAllGoodsSuccess(removeDuplicateById(items.data.result)));
     } catch (error) {    
-      // @ts-ignore
-      dispatch(getAllGoodsFailed(e.messsage));
+      let message;
+      if (error instanceof Error) {
+        message = error.message
+      }
+      dispatch(getAllGoodsFailed(message));
     }
   }
 };
@@ -45,8 +48,11 @@ export const fetchDataLengthThunk = () => async (dispatch: TAppDispatch) => {
       const countOfPage = Math.ceil(lengthOfDb.data.result.length/pageLimit);
       dispatch(getAllGoodsLengthSuccess(countOfPage));
     } catch (error) {
-      // @ts-ignore
-      dispatch(getAllGoodsLengthFailed(e.messsage));
+      let message;
+      if (error instanceof Error) {
+        message = error.message
+      } 
+      dispatch(getAllGoodsLengthFailed(message));
     }
   }
 };

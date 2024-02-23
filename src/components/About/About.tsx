@@ -1,6 +1,7 @@
 import styles from './About.module.css'
 
-function About() {
+const About = ():JSX.Element => { 
+
   return (
   <ul className={styles.main_container}>
     <li className={styles.item}>

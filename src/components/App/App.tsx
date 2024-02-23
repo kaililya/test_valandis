@@ -5,7 +5,7 @@ import Modal from '../Modal/Modal';
 import styles from './App.module.css';
 import { Route, Routes, useLocation } from 'react-router-dom';
 
-function App() {
+const App = ():JSX.Element => { 
 
   const location = useLocation();
   const background = location.state && location.state.background;
