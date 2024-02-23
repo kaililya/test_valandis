@@ -1,0 +1,151 @@
+.main_container {
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 4px;
+  /* background-color: rgb(240,240,240); */
+  height: 42px;
+  margin-top: 22px;
+}
+
+.text_error {
+  color: #c5cbcb;
+  font-size: 20px;
+  max-width: 380px;
+}
+
+.button_arrow_wrapper:disabled,
+.button_arrow_wrapper[disabled]{
+  cursor: not-allowed;
+}
+
+.button_arrow_wrapper:disabled .button_arrow:hover {
+  color: rgb(133, 131, 131);
+  background-color: #000000;
+}
+
+.button_arrow_wrapper:disabled .arrow_double {
+  color: rgb(133, 131, 131);
+}
+
+.button_arrow_wrapper:disabled .arrow {
+  color: rgb(133, 131, 131);
+}
+
+.button_arrow_wrapper {
+  padding: 6px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.button_plus {
+  padding: 6px;
+  background: transparent;
+}
+
+.button_plus:hover {
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.35) inset, 0px 0px 0px 0px #c5cbcb inset;
+}
+
+.button_plus_item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  transition: box-shadow .1s ease-in, background-color .1s ease-in;
+}
+
+.button_arrow {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  transition: box-shadow .1s ease-in, background-color .1s ease-in;
+}
+
+.buttom_arrow__disabled {
+  cursor: default;
+  color: rgb(205, 205, 205);
+}
+
+.button_arrow_wrapper:hover .button_arrow {
+  border-radius: 4px;
+  background-color: #5e54e3;
+  box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.35) inset, 0px 0px 0px 0px #c5cbcb inset;
+}
+
+.arrow_double {
+  /* height: 16px; */
+  color: white;
+}
+
+
+.arrow {
+  /* height: 16px; */
+  color: white
+}
+
+.buttom_arrow__disabled .arrow {
+  color: rgb(133, 131, 131);
+}
+
+.buttom_arrow__disabled .arrow_double {
+  color: rgb(133, 131, 131);
+}
+
+.buttom_arrow__disabled:hover .button_arrow {
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.arrow__left , .arrow_double__left {
+  transform: rotate(180deg);
+}
+
+.pagination_input {
+  display: none;
+  background-color: transparent;
+}
+
+
+.pagination_container_wrapper {
+  display: flex;
+  align-items: center;
+  transition: box-shadow .1s ease-in, background-color .1s ease-in;
+}
+
+.pagination_container_wrapper:hover .pagination_input {
+  display: block;
+}
+
+.pagination_number {
+  margin: 0;
+  color: white;
+  font-size: 24px;
+}
+
+.pagination_container {
+  padding: 7px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  /* background-color: rgb(240,240,240); */
+  transition: box-shadow .1s ease-in, background-color .1s ease-in;
+}
+
+@media screen and (max-width: 780px) {
+  .pagination_number {
+    margin: 0;
+    color: white;
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,28 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  width: calc((100vw - 320px)/(1440 - 320) * (720 - 280) + 280px);
+  /* background-color: #1c1c21; */
+  transform: translateX(50%) translateY(-50%);
+  border-radius: 40px;
+  z-index: 5;
+}
+
+.modal_state_closed {
+  display: none;
+}
+
+.modal > svg {
+  position: absolute;
+  top: -30px;
+  right: -40px;
+  z-index: 4;
+  cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .modal > svg {
+    right: -30px;
+  }
+}

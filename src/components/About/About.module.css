@@ -1,0 +1,13 @@
+.main_container {
+  color: rgb(255, 255, 255);
+  background-color: rgb(31, 5, 27);
+  border-radius: 6px;
+  padding: 18px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.subtitle {
+  font-weight: 600;
+  font-size: 18px;
+}

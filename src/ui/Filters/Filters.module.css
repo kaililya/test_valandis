@@ -1,0 +1,94 @@
+.main_container {
+  font-family: "Roboto";
+  margin-bottom: 40px;
+  border-radius: 20px;
+  padding: 12px;
+}
+
+.filters_container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+} 
+
+
+.label {
+  display: block;
+  font-size: 22px;
+  margin-right: 12px;
+  color: #fff;
+  margin-bottom: 12px;
+  font-weight: 400;
+} 
+
+.input {
+  background-color: transparent;
+  border: 1px solid #5e54e3;
+  border-radius: 4px;
+  color:  rgb(238, 238, 67);
+  padding: 10px 6px;
+  font-size: 16px;
+
+}
+
+.input::placeholder {
+  color:  white;
+  font-size: 14px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.buttons_container {
+  display: flex;
+  gap: 12px;
+}
+
+.button {
+  font-size: 17px;
+  height: 33px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color .2s ease;
+} 
+
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    background-color: #fecd03;
+    color: black;
+  }
+}
+
+
+
+
+.button__type_reset {
+  background-color: #5e54e3;
+}
+
+.button__disabled {
+  background-color: transparent;
+  color: #ffffff67;
+  border: 1px solid #ffffff67;
+  cursor: default;
+}
+
+.button__disabled:hover {
+  background-color: transparent;
+  color: #ffffff67;
+}

@@ -1,0 +1,72 @@
+.main_container {
+
+}
+
+.goods_container_wrapper {
+  height: 300px;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+/* Стилизация полосы прокрутки */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  height: 50px;
+  background-color: #5e54e3a5; /* Цвет самого скролбара */
+}
+
+::-moz-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+/* Стилизация полосы прокрутки */
+::-moz-scrollbar-thumb {
+  border-radius: 10px;
+  height: 50px;
+  background-color: #5e54e3a5; /* Цвет самого скролбара */
+}
+
+.goods_container {
+  max-width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 12px ;
+}
+
+.loader_container {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.error_container {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error_text {
+  color: white;
+  min-width: 100px;
+}
+
+.text_no_data_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.text_no_data {
+  color: white;
+  font-size: 24px;
+}
