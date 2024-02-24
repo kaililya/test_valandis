@@ -23,6 +23,7 @@
   background-color: #000000;
 }
 
+
 .button_arrow_wrapper:disabled .arrow_double {
   color: rgb(133, 131, 131);
 }
@@ -76,10 +77,12 @@
   color: rgb(205, 205, 205);
 }
 
-.button_arrow_wrapper:hover .button_arrow {
-  border-radius: 4px;
-  background-color: #5e54e3;
-  box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.35) inset, 0px 0px 0px 0px #c5cbcb inset;
+@media (hover: hover) and (pointer: fine) {
+  .button_arrow_wrapper:hover .button_arrow {
+    border-radius: 4px;
+    background-color: #5e54e3;
+    box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.35) inset, 0px 0px 0px 0px #c5cbcb inset;
+  }
 }
 
 .arrow_double {

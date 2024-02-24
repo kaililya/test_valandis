@@ -4,6 +4,8 @@ const About = ():JSX.Element => {
 
   return (
   <ul className={styles.main_container}>
+
+    
     <li className={styles.item}>
       <h3 className={styles.title}>
         Фильтрация
@@ -30,6 +32,17 @@ const About = ():JSX.Element => {
       </p>
       <p className={styles.subtitle}>
         Кнопки пагинации становятся неактивными пока идет запрос на сервер.
+      </p>
+    </li>
+    <li className={styles.item}>
+      <h3 className={styles.title}>
+        HELP
+      </h3>
+      <p className={styles.subtitle}>
+        Если вы видете желтый треугольник вместо данных, достаточно перезагрузить страницу 
+      </p>
+      <p className={styles.subtitle}>
+        Если вы указали фильтр и хотите получить данные снова без фильтрации, то лучше  нажать на кнопку "Сбросить (все)"
       </p>
     </li>
   </ul>);

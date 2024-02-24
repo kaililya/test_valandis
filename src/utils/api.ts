@@ -41,7 +41,7 @@ export const getIds = () =>  {
   
   return axios.post(
     mainURL,
-    makeBody(TParams.GET_IDS, { offset: page*50, limit: 47 }),
+    makeBody(TParams.GET_IDS, { offset: page * 50, limit: 47 }),
     defalutHeaders()
   )
 }
